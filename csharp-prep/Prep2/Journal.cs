@@ -1,8 +1,8 @@
 using System;
 
 public class Journal{
-    public List <string>Entry = new List<string>();
-    public void AddEntry(){
+    public List <Entry> _entries;
+    public void AddEntry(Entry newEntry){
 
     }
 
