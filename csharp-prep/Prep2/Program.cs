@@ -5,39 +5,75 @@ class Program
 {
     static void Main(string[] args)
     {
-        Start:
-        Console.WriteLine("Please select one of the following choices");
-        Console.WriteLine("1. Write");
-        Console.WriteLine("2. Display");
-        Console.WriteLine("3. Load");
-        Console.WriteLine("4. Save");
-        Console.WriteLine("5. Quit");
-        string temp = Console.ReadLine();
-        int option = int.Parse(temp);
-        
-            switch(option)
+        Console.WriteLine("What is your grade (percetage)?");
+        string grade = Console.ReadLine();
+        double value = double.Parse(grade);
+        double sign = value % 10;
+        char letter;
+        char symbol;
+
+        if (value >= 90)
+        { 
+            if (sign >= 7)
             {
-                case 1:
-                    PromptGenerator new_prompt = new PromptGenerator();
-                    new_prompt.GetRandomPrompt();
-                    Entry entry = new Entry();
-                    entry._entryText =Console.ReadLine();
-                    Journal new_entry = new Journal();
-                    new_entry.AddEntry(entry);   
-                    goto Start;              
-                case 2: 
-                    Journal entries = new Journal();
-                    entries.DisplayAll();
-                    goto Start;
-                case 3:
-                    Console.WriteLine("Niether");
-                    goto Start;
-                case 4: 
-                    Console.WriteLine("anything");
-                    goto Start;
-                case 5:
-                    Console.WriteLine("End");
-                    goto Start;
-            } 
+                letter = 'A';
+                Console.WriteLine($"Your grade is {letter}");
+            }else{
+                letter = 'A';
+                symbol = '-';
+                Console.WriteLine($"Your grade is {letter} {symbol}");
+
+            }
+        }else if (value >=80)
+        {
+            if (sign >= 7)
+            {
+                letter = 'B';
+                symbol = '+';
+                Console.WriteLine($"Your grade is {letter}{symbol}");
+            }else{
+                letter = 'B';
+                symbol = '-';
+                Console.WriteLine($"Your grade is {letter} {symbol}");
+
+            }
+        }else if (value >=70){
+            if (sign >= 7)
+            {
+                letter = 'C';
+                symbol = '+';
+                Console.WriteLine($"Your grade is {letter}{symbol}");
+            }else{
+                letter = 'C';
+                symbol = '-';
+                Console.WriteLine($"Your grade is {letter} {symbol}");
+
+            }
+        }else if (value >= 60)
+        {
+            if (sign >= 7)
+            {
+                letter = 'D';
+                symbol = '+';
+                Console.WriteLine($"Your grade is {letter}{symbol}");
+            }else{
+                letter = 'D';
+                symbol = '-';
+                Console.WriteLine($"Your grade is {letter} {symbol}");
+
+            }
+            
+        }else
+        { 
+            letter = 'F';
+            Console.WriteLine($"Your grade is {letter}");
+        }
+
+        if (value >= 70)
+        {
+           Console.WriteLine("Congratulations! You have passed the course");
+        }else{
+            Console.WriteLine("You have not passed the course. Dont worry. You could try again and you will be better. Dont give up.");
+        }
     }
 }
