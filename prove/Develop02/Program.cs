@@ -46,19 +46,6 @@ class Program
 
                 break;
             }
-
-
-
         }
-        //PromptGenerator temp = new PromptGenerator();
-        //Console.WriteLine(temp.GetRandomPrompt());
-        //string prompt_temp = temp.GetRandomPrompt();
-        // ask and received text from user
-        //Entry entry = new Entry();
-        //entry._entryText = Console.ReadLine();
-        
-        // journal
-        //Journal myJournal =  new Journal();
-        //myJournal.AddEntry(entry);
 
     }
