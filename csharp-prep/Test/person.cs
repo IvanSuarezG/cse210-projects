@@ -1,21 +1,47 @@
 using System;
 
 public class Person{
-    public string _givenName = "";
-    public string _familyName = "";
+    //public string _givenName = "";
+    //public string _familyName = "";
 
-    public Person ()
-    {
+    //public Person ()
+    //{
 
+    //}
+
+    //public void ShowEasterName ()
+    //{
+        //Console.WriteLine($"{_familyName}, {_givenName}");
+    //}
+
+    //public void ShowWesternName()
+    //{
+        //Console.WriteLine($"{_givenName} {_familyName}");
+    //}
+    private string _title;
+    private string _firstName;
+    private string _lastName;
+     
+    public string GetInformalSignature(){
+        return "Thanks," + _firstName;
     }
 
-    public void ShowEasterName ()
-    {
-        Console.WriteLine($"{_familyName}, {_givenName}");
+    public string GetFormalSignature(){
+        return "Sincerely," + GetFullName();
     }
 
-    public void ShowWesternName()
+    private string GetFullName(){
+        return _title + " " + _firstName + " " + " " + _lastName;
+    }
+    
+
+    // GETTER AND SETTER
+    public string GetFirstName()
     {
-        Console.WriteLine($"{_givenName} {_familyName}");
+        return _firstName;
+    }
+
+    public void SetFirstName(string firstName){
+        _firstName = firstName;
     }
 }
