@@ -19,15 +19,19 @@ class Program
     static string PromptUserName(){
         Console.Write("What is your name?  ");
         string _name = Console.ReadLine();
-
         return _name;
     }
 
     static int PromptUserNumber(){
-        Console.Write("Please enter your favorite number: ");
-        string num = Console.ReadLine();
-        int number = int.Parse(num);
-        return number;
+        int number;
+        while (true)
+        {
+            Console.Write("Please enter your favorite number: ");
+            string num = Console.ReadLine();
+            int number = int.Parse(num);
+            return number;
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
     }
 
     static int SquareNumber(int value){
@@ -35,9 +39,9 @@ class Program
            return square;
     }
 
-    static void DisplayResult(int amount, string date){
+    static void DisplayResult(int amount, string UserName){
         DisplayWelcome();
-        Console.WriteLine($"{date}, The square of your number is {amount}");
+        Console.WriteLine($"{UserName}, The square of your number is {amount}");
     
     }
 }
